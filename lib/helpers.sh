@@ -16,7 +16,6 @@ function hook() {
 	local hook="${WCON_HOOK_PREFIX}_$hook_name"
 	if declare -F $hook > /dev/null; then
 		$hook "$@"
-		return 0
 	else
 		# return false if no default value was given
 		[ $# -gt 0 ] && echo "$@"
