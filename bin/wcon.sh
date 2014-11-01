@@ -50,7 +50,8 @@ done
 
 if [ -t 1 ]; then
 	verbose 1 "chosen SSID: $ssid"
-	verbose 1 "chosen config: ${config/#$HOME/\~}"
+	verbose 1 "chosen config: $(dirname "$config")"
+	verbose 5 "full path: ${config/#$HOME/\~}"
 
 	verbose 1 "starting wpa_supplicant..."
 #	prepare_config "$ssid" "$config"
