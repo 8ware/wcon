@@ -43,7 +43,7 @@ function get_password() {
 function get_ssids() {
 	local IFS=$'\n' ssid regex='(?<=ESSID:")[^"]+'
 	for ssid in $(iwlist "$WCON_INTF" scan 2>/dev/null | grep -oP "$regex"); do
-		ssid=$(hook beautify "$ssid")
+		ssid=$(hook beautify_ssid "$ssid")
 		echo "$ssid"
 	done
 
