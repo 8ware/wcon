@@ -10,12 +10,11 @@ fi
 
 WCON=$(readlink -f "$0")
 WCON_HOME="$(dirname "$WCON")/.."
-WCON_LIB="$WCON_HOME/lib"
-WCON_ETC="$WCON_HOME/etc"
+PATH="$WCON_HOME/lib:$WCON_HOME/etc:$PATH"
 
-source "$WCON_LIB/config-utils.sh"
-source "$WCON_LIB/helpers.sh"
-source "$WCON_LIB/sudo.sh"
+source config-utils.sh
+source helpers.sh
+source sudo.sh
 
 # source configuration script
 source "$(get_user_config)" || {
@@ -23,7 +22,7 @@ source "$(get_user_config)" || {
 	exit 1
 }
 
-source "$WCON_ETC/default-values.sh"
+source default-values.sh
 
 
 kill_if_running wpa_supplicant
