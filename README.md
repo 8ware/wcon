@@ -4,9 +4,19 @@ wcon - A modular WiFi connector using wpa_supplicant
 Installation
 ------------
 
+Clone repository first:
+
 	$ git clone https://github.com/8ware/wcon.git
 	$ cd wcon
-	$ ln -s "$PWD/bin/wcon" ~/bin/wcon
+
+And then either symlink script:
+
+	$ ln -s "$PWD/bin/wcon.sh" ~/bin/wcon
+
+Or add `bin` directory to `$PATH`:
+
+	$ PATH+=":$PWD/bin"
+
 
 Configuration
 -------------
@@ -54,6 +64,7 @@ password for it.
 	}
 
 	WCON_VERBOSITY=1 # can be set to any level, e.g. 5
+
 
 Usage
 -----
