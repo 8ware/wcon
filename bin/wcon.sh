@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+# This is required if the script is simply symlinked to the user's bin
+# directory.
 if [ ! "$SUDO_USER" ]; then
 	echo "Need root privileges. Restarting script with sudo..." >&2
 	sudo "$0"
