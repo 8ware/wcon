@@ -69,7 +69,7 @@ function prepare_config() {
 
 	if grep -q "$WCON_PW_PLACEHOLDER" "$config"; then
 		local password=$(get_password "$ssid")
-		perl -pe "\$pw=$password; s/\Q$WCON_PW_PLACEHOLDER\E/\$pw/" "$config"
+		perl -pe "\$pw='$password'; s/\Q$WCON_PW_PLACEHOLDER\E/\$pw/" "$config"
 	else
 		cat "$config"
 	fi
